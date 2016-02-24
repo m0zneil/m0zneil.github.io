@@ -18,50 +18,6 @@ print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
 
-<pre class="prettyprint">
-class Voila {
-public:
-  // Voila
-  static const string VOILA = "Voila";
-
-  // will not interfere with embedded <a href="#voila2">tags</a>.
-}
-</pre>
-
-<pre class="prettyprint">
-function makeJsonpRequest (url, callback) {
-  var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
-
-  window[callbackName] = function(data) {
-    delete window[callbackName];
-    document.body.removeChild(script);
-    callback(data);
-  };
-
-  var script = document.createElement('script');
-  script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
-
-  document.body.appendChild(script);
-}
-</pre>
-
-{% highlight javascript %}
-function makeJsonpRequest (url, callback) {
-  var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
-
-  window[callbackName] = function(data) {
-    delete window[callbackName];
-    document.body.removeChild(script);
-    callback(data);
-  };
-
-  var script = document.createElement('script');
-  script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
-
-  document.body.appendChild(script);
-}
-{% endhighlight %}
-
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
 [jekyll-docs]: http://jekyllrb.com/docs/home
